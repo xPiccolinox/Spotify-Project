@@ -1,16 +1,21 @@
+import { useState } from 'react'
 import './Player.css'
+import SongInfo from './SongInfo/SongInfo'
+import SongAudio from './SongAudio/SongAudio'
 
 const Player = () => {
+  const [song, setSong] = useState(1)
+
+  const changeSong = () => {
+    setSong(song + 1)
+    if (song >= 2) setSong(0)
+    document.getElementById('audioPlayer').load()
+  }
+
   return(
     <div className="player">
-      <div className="songInfo">
-        <img src="http://placehold.jp/60x60.png" />
-        <div className="desc">
-          <p>dsadsadsadsadsa</p>
-          <p>asdsdadsadsad</p>
-        </div>
-        <img src="http://placehold.jp/16x16.png" />
-      </div>
+      <SongInfo changeSong={ changeSong } song={ song } />
+      <SongAudio song={ song } />
     </div>
   )
 }

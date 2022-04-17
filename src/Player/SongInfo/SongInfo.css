@@ -1,0 +1,60 @@
+.songInfo {
+  position: absolute;
+  display: flex;
+  float: left;
+  align-items: center;
+  max-width: 30%;
+  height: (100% - 32px);
+}
+.songInfo #song_image {
+  width: 60px;
+  height: 60px;
+  left: 0px;
+}
+.songInfo #song_like {
+  position: absolute;
+  right: 0px;
+  width: 18px;
+  height: 18px;
+  transition-property: width, height, filter, transform;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+}
+.songInfo #song_like:hover {
+  width: 22px;
+  height: 22px;
+  filter: brightness(1.3);
+  transform: translateX(2px);
+}
+.songInfo .desc {
+  float: left;
+  margin-left: 20px;
+  margin-right: 50px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.songInfo .desc a {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  float: left;
+  text-decoration: none;
+}
+.songInfo .desc div {
+  color: #bbbbbb;
+  font-size: 10px;
+  font-weight: 500;
+  float: left;
+}
+.songInfo .desc div a {
+  color: #bbbbbb;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+.songInfo .desc a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}

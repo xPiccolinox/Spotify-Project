@@ -1,0 +1,36 @@
+{
+  "songs": [
+    {
+      "id":0,
+      "title":"Wciąż Śpię z Twarzą w Misce Nachos",
+      "authors":
+        [
+          "Iron Weasel"
+        ],
+      "liked":false
+    },
+    {
+      "id":1,
+      "title":"DRUM GO DUM",
+      "authors":
+        [
+          "K/DA",
+          "Wolftyla",
+          "Bekuh Boom",
+          "Aluna",
+          "League of Legends"
+        ],
+      "liked":true
+    },
+    {
+      "id":2,
+      "title":"Turn Down for What",
+      "authors":
+        [
+          "DJ Snake",
+          "Lil Jon"
+        ],
+      "liked":false
+    }
+  ]
+}

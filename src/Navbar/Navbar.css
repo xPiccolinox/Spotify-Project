@@ -2,9 +2,8 @@
   background-color: black;
   display: block;
   position: absolute;
-  height: 100%;
   width: 12%;
-  height: 90%;
+  height: calc(100% - 100px);
   box-sizing: border-box;
 }
 .navbar .links {
@@ -12,8 +11,8 @@
 }
 .navbar .links a {
   background-color: #000000;
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 700;
   text-decoration: none;
   color: #aaaaaa;
   display: flex;
@@ -21,7 +20,7 @@
   height: 30px;
   padding: 5px 12px;
   transition-property: padding-left, filter;
-  transition-duration: 0.3s;
+  transition-duration: 0.15s;
   transition-timing-function: ease-in-out;
 }
 .navbar .links a:nth-child(3) {

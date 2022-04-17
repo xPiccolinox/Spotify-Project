@@ -1,23 +1,26 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
-import icon_home from './icons/icon_home.png'
-import icon_search from './icons/icon_search.png'
-import icon_library from './icons/icon_library.png'
-import icon_createPlaylist from './icons/icon_createPlaylist.png'
-import icon_likedSongs from './icons/icon_likedSongs.png'
-import icon_yourEpisodes from './icons/icon_yourEpisodes.png'
 
 const Navbar = () => {
+
+  const [home, setHome] = useState(false)
+  const [search, setSearch] = useState(false)
+  const [library, setLibrary] = useState(false)
+
+  const icon_home = `./icons/navbar/icon_home_${home}.png`
+  const icon_search = `./icons/navbar/icon_search_${search}.png`
+  const icon_library = `./icons/navbar/icon_library_${library}.png`
 
   return(
     <nav className="navbar">
       <div className="links">
-        <Link to="/"><img src={icon_home} />Home</Link>
-        <Link to="/"><img src={icon_search} />Search</Link>
-        <Link to="/"><img src={icon_library} />Your Library</Link>
-        <Link to="/"><img src={icon_createPlaylist} />Create Playlist</Link>
-        <Link to="/"><img src={icon_likedSongs} />Likes Songs</Link>
-        <Link to="/"><img src={icon_yourEpisodes} />Your Episodes</Link>
+        <Link to="/"><img src={icon_home} alt="Icon_Home" />Home</Link>
+        <Link to="/"><img src={icon_search} alt="Icon_Search" />Search</Link>
+        <Link to="/"><img src={icon_library}alt="Icon_Library" />Your Library</Link>
+        <Link to="/"><img src="./icons/navbar/icon_createPlaylist.png" alt="Icon_CreatePlaylist" />Create Playlist</Link>
+        <Link to="/"><img src="./icons/navbar/icon_likedSongs.png" alt="Icon_LikedSongs" />Liked Songs</Link>
+        <Link to="/"><img src="./icons/navbar/icon_yourEpisodes.png" alt="Icon_YourEpisodes" />Your Episodes</Link>
       </div>
     </nav>
   )
