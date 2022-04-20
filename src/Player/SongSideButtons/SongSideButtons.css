@@ -1,0 +1,97 @@
+.songSideButtons {
+  position: absolute;
+  width: 12%;
+  right: 16px;
+}
+.songSideButtons img {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border: none;
+  filter: brightness(1) blur(0.3px);
+  transform: translate(0px, -14px);
+  transition-property: width, height, filter, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+.songSideButtons img:hover {
+  width: 46px;
+  height: 46px;
+  filter: brightness(1.5);
+  transform: translate(5px, -19px)
+}
+.songSideButtons img:active {
+  filter: brightness(1);
+}
+.songSideButtons #songQueue {
+  right: calc(50% + 78px);
+}
+.songSideButtons #songVolume {
+  right: calc(50% + 44px);
+}
+.songSideButtons #songFullscreen {
+  right: 4px;
+}
+/* songVolume */
+#songVolumeBar {
+  position: absolute;
+  right: 40px;
+  width: 50%;
+  height: 16px;
+  transform: translateY(-5px);
+}
+/* songVolumeThumb */
+#songVolumeThumb {
+  background-color: #ffffff;
+  position: relative;
+  float: left;
+  width: 10px;
+  height: 10px;
+  bottom: 20px;
+  margin-left: 0%;
+  border-radius: 7px;
+  filter: opacity(0);
+  transform: translateX(0%);
+  pointer-events: none;
+}
+#songVolumeProgress:hover ~ #songVolumeThumb {
+  filter: opacity(1);
+}
+/* songVolumeOverlay */
+#songVolumeOverlay {
+  position: relative;
+  float: left;
+  width: calc(100% - 8px);
+  height: 4px;
+  bottom: 9px;
+  border-radius: 10px;
+  border: 4px solid #181818;
+  pointer-events: none;
+}
+/* songVolumeProgress */
+#songVolumeProgress {
+  position: relative;
+  float: left;
+  appearance: none;
+  background-color: #454545;
+  width: calc(100% - 4px);
+  height: 4px;
+  bottom: -3px;
+  border-width: 4px 4px 4px 0px;
+  border-style: solid;
+  border-color: #181818;
+  border-radius: 20px;
+  overflow: hidden;
+}
+#songVolumeProgress::-webkit-slider-thumb {
+  appearance: none;
+  background-color: #cccccc;
+  border-radius: 6px;
+  width: 4px;
+  height: 4px;
+  box-shadow: -1002px 0px 0px 1000px #cccccc
+}
+#songVolumeProgress:hover::-webkit-slider-thumb {
+  background-color: #1eb955;
+  box-shadow: -1002px 0px 0px 1000px #1eb955
+}

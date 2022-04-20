@@ -1,0 +1,48 @@
+.songButtons {
+  position: absolute;
+  height: 36px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.songButtons img {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border: none;
+  filter: brightness(1) blur(0.3px);
+  transform: translate(-50%, 0px);
+  transition-property: width, height, filter, transform;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+.songButtons img:hover {
+  width: 46px;
+  height: 46px;
+  filter: brightness(1.5);
+  transform: translate(-50%, -5px)
+}
+.songButtons img:active {
+  filter: brightness(1);
+}
+.songButtons #songShuffle {
+  left: -100px;
+}
+.songButtons #songPrevious {
+  left: -54px;
+}
+.songButtons #songPause {
+  left: 0px;
+}
+.songButtons #songNext {
+  left: 54px;
+}
+.songButtons #songRepeat {
+  left: 100px;
+}
+.songButtons #songPause:hover {
+  width: 42px;
+  height: 42px;
+  filter: brightness(1.5);
+  transform: translate(-50%, -3px)
+}

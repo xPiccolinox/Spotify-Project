@@ -1,9 +1,7 @@
-import { useState } from 'react'
-import './SongAudio.css'
-import db from './../../data/db.json'
-import { toBeInTheDocument } from '@testing-library/jest-dom/dist/matchers'
+import './SongBar.css'
+import db from '../../data/db.json'
 
-const SongAudio = (props) => {
+const SongBar = (props) => {
   const audio = './songs/song_' + db.songs[props.song].id + '/audio.mp3'
   const audioPlayer = document.getElementById('audioPlayer')
 
@@ -13,7 +11,7 @@ const SongAudio = (props) => {
   }
 
   return (
-    <div className="songAudio">
+    <div className="songBar">
       <audio id="audioPlayer" controls>
         <source src={audio} />
       </audio>
@@ -32,4 +30,4 @@ const SongAudio = (props) => {
   
 }
 
-export default SongAudio
+export default SongBar

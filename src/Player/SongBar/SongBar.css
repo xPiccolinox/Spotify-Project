@@ -1,10 +1,12 @@
-.songAudio {
+.songBar {
   position: absolute;
   display: flex;
-  left: 30%;
-  align-items: center;
   width: 40%;
-  height: calc(100% - 32px);
+  height: calc(40% - 16px);
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  align-items: center;
 }
 .songTime {
   position: absolute;
