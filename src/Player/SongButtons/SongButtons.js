@@ -1,25 +1,11 @@
 import { useState } from 'react'
 import './SongButtons.css'
 
-const SongButtons = ({ nextSong, previousSong }) => {
-  const [shuffled, setShuffled] = useState(false)
-  const songShuffle = `./icons/player/icon_shuffled_${shuffled}.png`
-  const shuffle = () => {
-    setShuffled(!shuffled)
-  }
+const SongButtons = ({ shuffle, previousSong, pause, nextSong, repeat, props }) => {
 
-  const [paused, setPaused] = useState(false)
-  const songPause = `./icons/player/icon_paused_${paused}.png`
-  const pause = () => {
-    setPaused(!paused)    
-  }
-
-  const [repeated, setRepeated] = useState(0)
-  const songRepeat = `./icons/player/icon_repeated_${repeated}.png`
-  const repeat = () => {
-    setRepeated(repeated + 1)
-    if (repeated >= 2) setRepeated(0)    
-  }
+  const songShuffle = `./icons/player/icon_shuffled_${props[0]}.png`
+  const songPause = `./icons/player/icon_paused_${props[1]}.png`
+  const songRepeat = `./icons/player/icon_repeated_${props[2]}.png`
 
   return (
     <div className="songButtons">

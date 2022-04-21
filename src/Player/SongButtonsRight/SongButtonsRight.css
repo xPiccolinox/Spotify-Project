@@ -1,9 +1,9 @@
-.songSideButtons {
+.songButtonsRight {
   position: absolute;
   width: 12%;
   right: 16px;
 }
-.songSideButtons img {
+.songButtonsRight img {
   position: absolute;
   width: 36px;
   height: 36px;
@@ -14,22 +14,22 @@
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
 }
-.songSideButtons img:hover {
+.songButtonsRight img:hover {
   width: 46px;
   height: 46px;
   filter: brightness(1.5);
   transform: translate(5px, -19px)
 }
-.songSideButtons img:active {
+.songButtonsRight img:active {
   filter: brightness(1);
 }
-.songSideButtons #songQueue {
+.songButtonsRight #songQueue {
   right: calc(50% + 78px);
 }
-.songSideButtons #songVolume {
+.songButtonsRight #songVolume {
   right: calc(50% + 44px);
 }
-.songSideButtons #songFullscreen {
+.songButtonsRight #songFullscreen {
   right: 4px;
 }
 /* songVolume */

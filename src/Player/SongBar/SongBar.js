@@ -1,14 +1,21 @@
+import { useEffect } from 'react'
 import './SongBar.css'
 import db from '../../data/db.json'
 
 const SongBar = (props) => {
   const audio = './songs/song_' + db.songs[props.song].id + '/audio.mp3'
-  const audioPlayer = document.getElementById('audioPlayer')
+  let thumbPosition
+  
+  useEffect(() => {
+    thumbPosition = document.getElementById('songRangeProgress').value / document.getElementById('songRangeProgress').max * 100
+    document.getElementById('songRangeThumb').style.marginLeft = 'calc(' + thumbPosition + '% - ' + thumbPosition * 10 / 100 + 'px)'
+  })
 
-  const onChangeHandle = (e) => {
-    const targetPercent = e.target.value / e.target.max * 100
-    document.getElementById('songRangeThumb').style.marginLeft = 'calc(' + targetPercent + '% - ' + targetPercent * 10 / 100 + 'px)'
+  const onChangeHandle = () => {
+    thumbPosition = document.getElementById('songRangeProgress').value / document.getElementById('songRangeProgress').max * 100
+    document.getElementById('songRangeThumb').style.marginLeft = 'calc(' + thumbPosition + '% - ' + thumbPosition * 10 / 100 + 'px)'
   }
+
 
   return (
     <div className="songBar">

@@ -1,31 +1,52 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './Player.css'
 import db from './../data/db.json'
 import SongInfo from './SongInfo/SongInfo'
 import SongButtons from './SongButtons/SongButtons'
 import SongBar from './SongBar/SongBar'
-import SongSideButtons from './SongSideButtons/SongSideButtons'
+import SongButtonsRight from './SongButtonsRight/SongButtonsRight'
 
 const Player = () => {
   const [song, setSong] = useState(1)
-
-  const nextSong = () => {
-    setSong(song + 1)
-    if (song >= db.songs.length - 1) setSong(0)
-    document.getElementById('audioPlayer').load()
-  }
-  const previousSong = () => {
-    setSong(song - 1)
-    if (song <= 0) setSong(db.songs.length - 1)
-    document.getElementById('audioPlayer').load()
-  }
+    const [shuffled, setShuffled] = useState(false)
+    const [paused, setPaused] = useState(true)
+    const [repeated, setRepeated] = useState(0)
+    let audioPlayer = document.getElementById('audioPlayer')
+    
+    useEffect(() => {
+      audioPlayer = document.getElementById('audioPlayer')
+      !paused ? audioPlayer.play() : audioPlayer.pause()
+    })
+    const shuffle = () => {
+      setShuffled(!shuffled)
+    }
+    const previousSong = () => {
+      setSong(song - 1)
+      setPaused(false)
+      if (song <= 0) setSong(db.songs.length - 1)
+      document.getElementById('audioPlayer').load()
+    }
+    const pause = () => {
+      setPaused(!paused)
+      paused ? audioPlayer.play() : audioPlayer.pause()
+    }
+    const nextSong = () => {
+      setSong(song + 1)
+      setPaused(false)
+      if (song >= db.songs.length - 1) setSong(0)
+      document.getElementById('audioPlayer').load()
+    }
+    const repeat = () => {
+      setRepeated(repeated + 1)
+      if (repeated >= 2) setRepeated(0)    
+    }
 
   return(
     <div className="player">
-      <SongInfo song={ song } />
-      <SongButtons nextSong={ nextSong } previousSong={ previousSong } />
-      <SongBar song={ song } />
-      <SongSideButtons />
+      <SongInfo song={song} />
+      <SongButtons  shuffle={shuffle} previousSong={previousSong} pause={pause} nextSong={nextSong} repeat={repeat} props={[shuffled, paused, repeated]} />
+      <SongBar song={song} />
+      <SongButtonsRight />
     </div>
   )
 }
