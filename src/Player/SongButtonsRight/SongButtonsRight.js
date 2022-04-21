@@ -5,7 +5,10 @@ const SongButtonsRight = () => {
   const [queued, setQueued] = useState(false)
   const [volume, setVolume] = useState(2)
   const [fullscreened, setFullscreened] = useState(false)
+  const [previousVolume, setPreviousVolume] = useState(50)
+  const queueIcon = `icons/player/icon_queue_${queued}.png`
   const volumeIcon = `icons/player/icon_volume_${volume}.png`
+  const fullscreenIcon = `icons/player/icon_fullscreen_${fullscreened}.png`
   let audioPlayer = document.getElementById('audioPlayer')
   let thumbPosition
   
@@ -25,26 +28,41 @@ const SongButtonsRight = () => {
     else if (thumbPosition > 0) setVolume(1)
     else if (thumbPosition === 0) setVolume(0)
   }
-
-  const queue = `icons/player/icon_queue_${queued}.png`
+  const previousVolumeChange = () => {
+    thumbPosition = document.getElementById('songVolumeProgress').value / document.getElementById('songVolumeProgress').max * 100
+    if (thumbPosition != 0) setPreviousVolume(thumbPosition)
+  }
+  const muteChange = () => {
+    if (thumbPosition != 0) {
+      thumbPosition = 0
+      setVolume(0)
+    }
+    else {
+      thumbPosition = previousVolume
+      if (thumbPosition > 66) setVolume(3)
+      else if (thumbPosition > 33) setVolume(2)
+      else if (thumbPosition > 0) setVolume(1)
+    }
+    document.getElementById('songVolumeProgress').value = thumbPosition
+    document.getElementById('songVolumeThumb').style.marginLeft = 'calc(' + thumbPosition + '% - ' + thumbPosition * 10 / 100 + 'px)'
+  }
   const queueChange = () => {
     setQueued(!queued)
   }
-  const fullscreen = `icons/player/icon_fullscreen_${fullscreened}.png`
   const fullscreenChange = () => {
     setFullscreened(!fullscreened)
   }
 
   return (
     <div className="songButtonsRight">
-      <img id="songQueue" onClick={queueChange} src={queue} />
-      <img id="songVolume" src={volumeIcon} />
+      <img id="songQueue" onClick={queueChange} src={queueIcon} />
+      <img id="songVolume" onClick={muteChange} src={volumeIcon} />
       <div id="songVolumeBar">
-        <input id="songVolumeProgress" type="range" min="0" max="100"  onChange={volumeChange} />
+        <input id="songVolumeProgress" type="range" min="0" max="100"  onChange={volumeChange} onClick={previousVolumeChange} />
         <div id="songVolumeOverlay" />
         <div id="songVolumeThumb" />
       </div>
-      <img id="songFullscreen" onClick={fullscreenChange} src={fullscreen} />
+      <img id="songFullscreen" onClick={fullscreenChange} src={fullscreenIcon} />
     </div>
   )
 }

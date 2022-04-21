@@ -7,7 +7,7 @@ import SongBar from './SongBar/SongBar'
 import SongButtonsRight from './SongButtonsRight/SongButtonsRight'
 
 const Player = () => {
-  const [song, setSong] = useState(1)
+  const [song, setSong] = useState(0)
     const [shuffled, setShuffled] = useState(false)
     const [paused, setPaused] = useState(true)
     const [repeated, setRepeated] = useState(0)
