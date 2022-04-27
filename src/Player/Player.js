@@ -15,16 +15,28 @@ const Player = () => {
     
     useEffect(() => {
       audioPlayer = document.getElementById('audioPlayer')
-      !paused ? audioPlayer.play() : audioPlayer.pause()
+      !paused ? audioPlayer.play() : audioPlayer.pause()      
+      audioPlayer.onended = () => {
+        if (repeated == 2) {
+          audioPlayer.currentTime = 0
+          audioPlayer.play()
+        }
+        else nextSong()
+      }
     })
     const shuffle = () => {
       setShuffled(!shuffled)
     }
     const previousSong = () => {
-      setSong(song - 1)
-      setPaused(false)
-      if (song <= 0) setSong(db.songs.length - 1)
-      document.getElementById('audioPlayer').load()
+      if (audioPlayer.currentTime >= 4) {
+        audioPlayer.currentTime = 0
+      }
+      else {
+        setSong(song - 1)
+        setPaused(false)
+        if (song <= 0) setSong(db.songs.length - 1)
+        document.getElementById('audioPlayer').load()
+      }
     }
     const pause = () => {
       setPaused(!paused)

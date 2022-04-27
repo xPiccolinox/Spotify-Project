@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 * {
+  color: #ffffff;
   margin: 0;
   user-select: none;
   -moz-user-select: none;
@@ -20,4 +21,31 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.content {
+  background-color: #121212;
+  display: block;
+  position: absolute;
+  width: 76%;
+  height: calc(100% - 100px);
+  left: 12%;
+  box-sizing: border-box;
+}
+.content > * {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: overlay;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  background: #666666DD;
 }
