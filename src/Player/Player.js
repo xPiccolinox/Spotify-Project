@@ -45,7 +45,10 @@ const Player = () => {
     const nextSong = () => {
       setSong(song + 1)
       setPaused(false)
-      if (song >= db.songs.length - 1) setSong(0)
+      if (song >= db.songs.length - 1) {
+        setSong(0)
+        if (repeated == 0) setPaused(true)
+      }
       document.getElementById('audioPlayer').load()
     }
     const repeat = () => {

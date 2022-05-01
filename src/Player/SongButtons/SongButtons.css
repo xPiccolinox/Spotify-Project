@@ -13,8 +13,8 @@
   filter: brightness(1) blur(0.3px);
   transform: translate(-50%, 0px);
   transition-property: width, height, filter, transform;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
+  transition-duration: 0.1s;
+  transition-timing-function: linear;
 }
 .songButtons img:hover {
   width: 46px;

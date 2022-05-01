@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from './Navbar/Navbar'
+import Topbar from './Topbar/Topbar'
 import Home from './content/Home/Home'
 import Search from './content/Search/Search'
 import YourLibrary from './content/YourLibrary/YourLibrary'
@@ -9,6 +10,7 @@ import Friends from './Friends/Friends'
 import Player from './Player/Player'
 
 function App() {
+
   return (
     <BrowserRouter>
       <div className="App">
@@ -21,6 +23,7 @@ function App() {
             <Route path="/likedsongs" element={<LikedSongs />} />
             <Route path="/yourepisodes" element={<YourEpisodes />} />
           </Routes>
+          <Topbar />
         </div>
         <Friends />
         <Player />

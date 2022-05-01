@@ -2,13 +2,13 @@
   "songs": [
     {
       "id":0,
-      "title":"Wciąż Śpię z Twarzą w Misce Nachos",
+      "title":"Never Gonna Give You Up",
       "authors":
         [
-          "Iron Weasel"
+          "Rick Astley"
         ],
-      "image": "IronWeasel_ImInTheBand",
-      "liked":false
+      "image":"RickAstley_NeverGonnaGiveYouUp",
+      "liked":true
     },
     {
       "id":1,
@@ -21,18 +21,17 @@
           "Aluna",
           "League of Legends"
         ],
-      "image": "KDA_AllOut",
+      "image":"KDA_AllOut",
       "liked":true
     },
     {
       "id":2,
-      "title":"Turn Down for What",
+      "title":"Wciąż Śpię z Twarzą w Misce Nachos",
       "authors":
         [
-          "DJ Snake",
-          "Lil Jon"
+          "Iron Weasel"
         ],
-      "image": "DJSnakeLilJon_TurnDownForWhat",
+      "image":"IronWeasel_ImInTheBand",
       "liked":false
     },
     {
@@ -46,7 +45,7 @@
           "Annika Wells",
           "League of Legends"
         ],
-      "image": "KDA_AllOut",
+      "image":"KDA_AllOut",
       "liked":false
     },
     {
@@ -62,7 +61,7 @@
           "Seraphine",
           "League of Legends"
         ],
-      "image": "KDA_More",
+      "image":"KDA_More",
       "liked":false
     },
     {
@@ -76,7 +75,7 @@
           "Bea Miller",
           "League of Legends"
         ],
-      "image": "KDA_AllOut",
+      "image":"KDA_AllOut",
       "liked":true
     },
     {
@@ -90,7 +89,7 @@
           "Annika Wells",
           "League of Legends"
         ],
-      "image": "KDA_AllOut",
+      "image":"KDA_AllOut",
       "liked":false
     },
     {
@@ -102,7 +101,7 @@
           "Valerie Broussard",
           "Ray Chen"
         ],
-      "image": "LeagueOfLegends_Awaken",
+      "image":"LeagueOfLegends_Awaken",
       "liked":true
     },
     {
@@ -113,7 +112,7 @@
           "League of Legends",
           "PVRIS"
         ],
-      "image": "LeagueOfLegends_BurnItAllDown",
+      "image":"LeagueOfLegends_BurnItAllDown",
       "liked":true
     },
     {
@@ -124,7 +123,7 @@
           "League of Legends",
           "Against The Current"
         ],
-      "image": "LeagueOfLegends_LegendsNeverDie",
+      "image":"LeagueOfLegends_LegendsNeverDie",
       "liked":false
     },
     {
@@ -136,12 +135,12 @@
           "Cailin Russo",
           "Chrissy Constanza"
         ],
-      "image": "LeagueOfLegends_Phoenix",
+      "image":"LeagueOfLegends_Phoenix",
       "liked":false
     },
     {
       "id":11,
-      "title":"The Call - The Call - The Call - The Call - The Call - The Call - The Call - The Call - ",
+      "title":"The Call",
       "authors":
         [
           "League of Legends",
@@ -149,7 +148,7 @@
           "Louis Leibfried",
           "Edda Haydes"
         ],
-      "image": "LeagueOfLegends_TheCall",
+      "image":"LeagueOfLegends_TheCall",
       "liked":false
     },
     {
@@ -165,7 +164,7 @@
           "Thutmose",
           "League of Legends"
         ],
-      "image": "LeagueOfLegends_Giants",
+      "image":"LeagueOfLegends_Giants",
       "liked":false
     },
     {
@@ -177,7 +176,100 @@
           "2WEI",
           "Edda Hayes"
         ],
-      "image": "LeagueOfLegends_Warriors",
+      "image":"LeagueOfLegends_Warriors",
+      "liked":false
+    },
+    {
+      "id":14,
+      "title":"Turn Down for What",
+      "authors":
+        [
+          "DJ Snake",
+          "Lil Jon"
+        ],
+      "image":"DJSnakeLilJon_TurnDownForWhat",
+      "liked":false
+    },
+    {
+      "id":15,
+      "title":"20th Century Boy - 2012 Remaster",
+      "authors":
+        [
+          "T.Rex"
+        ],
+      "image":"TRex_20thCenturyBoy",
+      "liked":true
+    },
+    {
+      "id":16,
+      "title":"Dancin - Krono Remix",
+      "authors":
+        [
+          "Aaron Smith",
+          "Luvli",
+          "Krono"
+        ],
+      "image":"AaronSmith_DancinKronoRemix",
+      "liked":false
+    },
+    {
+      "id":17,
+      "title":"Without me",
+      "authors":
+        [
+          "Eminem"
+        ],
+      "image":"Eminem_WithoutMe",
+      "liked":false
+    },
+    {
+      "id":18,
+      "title":"Nothing's Gonna Change My Love For You",
+      "authors":
+        [
+          "Glenn Medeiros"
+        ],
+      "image":"GlennMedeiros_NothingsGonnaChangeMyLoveForYou",
+      "liked":false
+    },
+    {
+      "id":19,
+      "title":"Guajira Guantanamera",
+      "authors":
+        [
+          "Compay Segundo"
+        ],
+      "image":"CompaySegundo_GuajiraGuantanamera",
+      "liked":false
+    },
+    {
+      "id":20,
+      "title":"Dynamite",
+      "authors":
+        [
+          "Taio Cruz"
+        ],
+      "image":"TaioCruz_Dynamite",
+      "liked":false
+    },
+    {
+      "id":21,
+      "title":"Tokyo Drift",
+      "authors":
+        [
+          "Teriyaki Boyz"
+        ],
+      "image":"TeriyakiBoyz_TokyoDrift",
+      "liked":false
+    },
+    {
+      "id":22,
+      "title":"People I Don't Like",
+      "authors":
+        [
+          "UPSAHL"
+        ],
+      "image":"Upsahl_PeopleIDontLike",
       "liked":false
     }
   ],
@@ -193,7 +285,24 @@
       "songs":[1,3,4,5,6,7,8,9,10,11,12,13]
     },
     {
-      "id":0,
+      "id":2,
+      "name":"Classics from the past",
+      "songs":[0,15,17,18,19,20]
+    },
+    {
+      "id":3,
+      "name":"Get Rickrolled",
+      "songs":[0,19,21,17]
+    }
+    ,
+    {
+      "id":4,
+      "name":"New Playlist",
+      "songs":[21,22,20,16,14,6,8,1]
+    }
+    ,
+    {
+      "id":5,
       "name":"Some random playlist",
       "songs":[3,4,6,7,9,10,12,13]
     }

@@ -2,7 +2,7 @@
   background-color: #000000;
   display: block;
   position: absolute;
-  width: 12%;
+  width: 230px;
   height: calc(100% - 100px);
   left: 0px;
   box-sizing: border-box;
@@ -13,13 +13,14 @@
 }
 #navbar #links a {
   background-color: #000000;
+  color: #aaaaaa;
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  color: #aaaaaa;
   display: flex;
   align-items: center;
   height: 30px;
+  width: 100%;
   padding: 5px 12px;
   transition-property: padding-left, filter;
   transition-duration: 0.15s;
@@ -38,4 +39,38 @@
   margin-right: 12px;
   filter: brightness(0.66);
 }
+/* Hr */
+#navbar hr {
+  border: 1px solid #202020;
+  position: relative;
+  width: calc(100% - 30px);
+  left: 12px;
+  margin: 18px 0px;
+}
 /* Playlists */
+#navbar #playlists {
+  position: relative;
+  max-height: calc(100% - 320px);
+  width: 100%;
+  overflow-y: scroll;
+}
+#navbar #playlists a {
+  color: #aaaaaa;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  align-items: center;
+  width: calc(100% - 12px);
+  padding: 4px 0px 4px 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition-property: padding, color;
+  transition-duration: 0.05s;
+  transition-timing-function: ease-in-out;
+}
+#navbar #playlists a:hover {
+  color: white;
+  padding: 4px 4px 4px 8px;
+}
