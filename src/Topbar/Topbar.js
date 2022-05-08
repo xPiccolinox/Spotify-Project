@@ -6,8 +6,8 @@ const Topbar = () => {
 
   return(
     <div id="topbar">
-      <img src="./icons/topbar/goBack.png" onClick={() => {navigate(-1)}} />
-      <img src="./icons/topbar/goForward.png" onClick={() => {navigate(1)}} />
+      <img src="/icons/topbar/goBack.png" onClick={() => {navigate(-1)}} />
+      <img src="/icons/topbar/goForward.png" onClick={() => {navigate(1)}} />
     </div>
   )
 }

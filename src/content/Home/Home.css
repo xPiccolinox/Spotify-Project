@@ -1,7 +1,5 @@
 #home {
   background: linear-gradient(180deg, #230b58, #121212 350px);
-  box-sizing: border-box;
-  padding: 80px 32px 0px 32px;
 }
 #home #greeting .text {
   width: 100%;

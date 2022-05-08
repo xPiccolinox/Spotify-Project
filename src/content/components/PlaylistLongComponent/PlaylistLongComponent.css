@@ -1,0 +1,20 @@
+.playlistLongComponent {
+  background-color: #ffffff1a;
+  display: flex;
+  width: 100%;
+  height: 80px;
+  border-radius: 4px;
+  font-weight: 600;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.2s ease-in-out; 
+}
+.playlistLongComponent:hover {
+  background-color: #ffffff3a;
+}
+.playlistLongComponent .playlistImage {
+  width: 80px;
+  height: 80px;
+  margin-right: 16px;
+  box-shadow: 0px 0px 12px 0px #00000066;
+}

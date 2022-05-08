@@ -1,0 +1,145 @@
+#playlist #gradientBackground {
+  background-image: linear-gradient(180deg, #5a39a1, #331d5f 340px, #271547 340px, #12121200 600px);
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+}
+/* Playlist Desc */
+#playlist #desc {
+  display: flex;
+  width: 100%;
+  height: 240px;
+  align-items: flex-end;
+}
+#playlist #desc #playlistInfo > div {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+#playlist #desc #playlistInfo #playlistTitle {
+  font-size: 80px;
+  font-weight: 800;
+}
+#playlist #desc #playlistInfo #playlistDetails {
+  height: 24px;
+}
+#playlist #desc #playlistInfo #playlistDetails div {
+  margin-right: 8px;
+}
+#playlist #desc #playlistInfo #playlistDetails div:nth-child(n+3) {
+  font-weight: 400;
+}
+#playlist #desc #playlistInfo #playlistDetails img {
+  height: 24px;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+.playlistImage {
+  width: 240px;
+  height: 240px;
+  margin-right: 24px;
+  box-shadow: 0px 0px 36px 4px #00000044;
+}
+/* Playlist Navbar */
+#playlistNavbar {
+  display: flex;
+  width: 100%;
+  height: 56px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+#playlistNavbar img {
+  position: relative;
+  height: 56px;
+  left: 0px;
+  transition-property: height transform;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.1s;
+}
+#playlistNavbar img:hover {
+  height: 60px;
+  transform: translateX(-2px);
+}
+/* Songs List */
+#playlist .song {
+  display: grid;
+  width: 100%;
+  height: 32px;
+  padding: 0px 40px 0px 24px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 14px;
+  align-items: center;
+  grid-template-columns: 50px 1fr 100px;
+}
+#playlist .song:nth-child(1) {
+  margin: 12px 0px;
+  border-bottom: 1px solid #333333;
+}
+#playlist .song:nth-child(n+2) {
+  height: 52px;
+}
+#playlist .song:nth-child(n+2):hover {
+  background-color: #ffffff20;
+}
+#playlist .song:nth-child(n+2):active {
+  background-color: #ffffff40;
+}
+#playlist .song:nth-child(n+2):hover .songInfo .songTitleAuthors .songAuthors > div > a {
+  color: #ffffff;
+}
+#playlist .song > * {
+  color: #dddddd;
+}
+#playlist .song .songIndex img {
+  position: absolute;
+  height: 12px;
+  filter: opacity(0);
+  transform: translate(calc(-50% + 6px), calc(-50% + 9px));
+}
+#playlist .song:nth-child(n+2):hover .songIndex{
+  color: #ffffff00;
+}
+#playlist .song:nth-child(n+2):hover .songIndex img {
+  filter: opacity(1);
+}
+#playlist .song .songInfo {
+  display: flex;
+  align-items: center;
+}
+#playlist .song .songInfo > img {
+  height: 38px;
+}
+#playlist .song .songInfo .songTitleAuthors {
+  width: calc(100% - 38px);
+  height: 50%;
+  box-sizing: border-box;
+  padding-left: 16px; 
+}
+#playlist .song .songInfo .songTitleAuthors .songTitle {
+  color: #ffffff;
+  font-size: 14px;
+}
+#playlist .song .songInfo .songTitleAuthors .songAuthors > div > div {
+  color: #bbbbbb;
+  font-size: 12px;
+  float: left;
+}
+#playlist .song .songInfo .songTitleAuthors .songAuthors > div > a {
+  color: #bbbbbb;
+  font-size: 12px;
+  float: left;
+}
+#playlist .song .songInfo .songTitleAuthors .songAuthors > div > a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+#playlist .song .songDuration {
+  text-align: right;
+}

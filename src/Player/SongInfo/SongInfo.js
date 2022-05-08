@@ -9,8 +9,8 @@ const SongInfo = ({ changeSong, song }) => {
   const [descWidth, setDescWidth] = useState(0)
   const [titleWidth, setTitleWidth] = useState(0)
   const [authorsWidth, setAuthorsWidth] = useState(0)
-  const image = './songs/images/' + db.songs[song].image + '.png'
-  const like = './icons/player/icon_like_' + db.songs[song].liked + '.png'
+  const image = '/songs/images/' + db.songs[song].image + '.png'
+  const like = '/icons/player/icon_like_' + db.songs[song].liked + '.png'
 
   const authorsList = authors.map((author, index) => {
     const comma = (index !== 0) ? <div>,&nbsp;</div> : ''

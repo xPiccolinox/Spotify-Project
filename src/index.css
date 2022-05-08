@@ -43,6 +43,8 @@ a {
   overflow-y: overlay;
   overflow-x: hidden;
   z-index: 0;
+  box-sizing: border-box;
+  padding: 70px 32px 0px 32px;
 }
 ::-webkit-scrollbar {
   width: 12px;

@@ -6,7 +6,8 @@ const SongBar = (props) => {
   const [audioPlayerDuration, setAudioPlayerDuration] = useState(0)
   const [audioPlayerCurrentTime, setAudioPlayerCurrentTime] = useState(0)
   const [songRangeProgressStill, setSongRangeProgressStill] = useState(false)
-  const audio = './songs/' + db.songs[props.song].id + '.mp3'
+  const song = db.songs[props.song].id
+  const audio = `/songs/${song}.mp3`
   let songCurrentTime = '0:00'
   let songDurationTime = '0:00'
   let thumbPosition
@@ -15,7 +16,11 @@ const SongBar = (props) => {
   else songCurrentTime = `${Math.floor(audioPlayerCurrentTime / 60)}:${Math.floor(audioPlayerCurrentTime % 60)}`
   if (Math.floor(audioPlayerDuration % 60) < 10) songDurationTime = `${Math.floor(audioPlayerDuration / 60)}:0${Math.floor(audioPlayerDuration % 60)}`
   else songDurationTime = `${Math.floor(audioPlayerDuration / 60)}:${Math.floor(audioPlayerDuration % 60)}`
-  
+
+  useEffect(() => {
+    document.getElementById('audioPlayer').load()
+  }, [props.playlistSongIndex])
+
   useEffect(() => {
     let audioPlayer = document.getElementById('audioPlayer')
     thumbPosition = document.getElementById('songRangeProgress').value / document.getElementById('songRangeProgress').max * 100

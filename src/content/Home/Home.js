@@ -1,6 +1,5 @@
-import db from './../../data/db.json'
 import './Home.css'
-import PlaylistImage from '../components/PlaylistImage/PlaylistImage'
+import PlaylistLongComponent from '../components/PlaylistLongComponent/PlaylistLongComponent'
 
 const Home = () => {
   const time = new Date().getHours()
@@ -15,12 +14,12 @@ const Home = () => {
       <div id="greeting">
         <div className="text">{greetingMessage}</div>
         <div className="playlists">
-          <PlaylistImage exactImage="./icons/content/icon_likedSongs" text="Liked Songs" />
-          <PlaylistImage playlistId={0} />
-          <PlaylistImage playlistId={1} />
-          <PlaylistImage playlistId={2} />
-          <PlaylistImage playlistId={3} />
-          <PlaylistImage playlistId={4} />
+          <PlaylistLongComponent playlistId={0} />
+          <PlaylistLongComponent playlistId={1} />
+          <PlaylistLongComponent playlistId={2} />
+          <PlaylistLongComponent playlistId={3} />
+          <PlaylistLongComponent playlistId={4} />
+          <PlaylistLongComponent playlistId={5} />
         </div>
       </div>
     </div>
