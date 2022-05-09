@@ -77,7 +77,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
             <Route path="/yourlibrary" element={<YourLibrary />} />
-            <Route path="/playlist/:id" element={<Playlist changeSong={changeSong}/>} />
+            <Route path="/playlist/:id" element={<Playlist changeSong={changeSong} playlistId={playlistId} playlistSongIndex={playlistSongIndex} paused={paused} />} />
             <Route path="/yourepisodes" element={<YourEpisodes />} />
           </Routes>
           <Topbar />

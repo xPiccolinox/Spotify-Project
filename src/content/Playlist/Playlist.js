@@ -3,7 +3,7 @@ import db from '../../data/db.json'
 import './Playlist.css'
 import PlaylistImage from '../components/PlaylistImage/PlaylistImage'
 
-const Playlist = ({ changeSong }) => {
+const Playlist = ({ changeSong, playlistId, playlistSongIndex, paused }) => {
   const { id } = useParams()
   let playlistType
   let playlistAuthor
@@ -19,15 +19,29 @@ const Playlist = ({ changeSong }) => {
         </div>
       )
     })
+    let indexOutput
+    let idOutput
+    if (playlistId == id && playlistSongIndex == index && paused == false) {
+      idOutput = "currentSong"
+      indexOutput = (
+      <div id="currentSongAnimation">
+        <div id="currentSongAnimation1"></div>
+        <div id="currentSongAnimation2"></div>
+        <div id="currentSongAnimation3"></div>
+        <div id="currentSongAnimation4"></div>
+      </div>
+      )
+    }
+    else indexOutput = index + 1
 
     if (Math.floor(db.songs[db.playlists[id].songs[index]].duration % 60) < 10) songDuration = `${Math.floor(db.songs[db.playlists[id].songs[index]].duration / 60)}:0${Math.floor(db.songs[db.playlists[id].songs[index]].duration % 60)}`
     else songDuration = `${Math.floor(db.songs[db.playlists[id].songs[index]].duration / 60)}:${Math.floor(db.songs[db.playlists[id].songs[index]].duration % 60)}`
 
     return (
-      <div key={index} className="song" onDoubleClick={() => changeSong(id, index)}>
+      <div key={index} className="song" id={idOutput} onDoubleClick={() => changeSong(id, index)}>
         <div className="songIndex">
-          <img src="/icons/content/icon_playSong.png" alt="play" onClick={() => changeSong(id, index)} />
-          {index + 1}
+          <img src="/icons/content/icon_songPaused_true.png" alt="play" onClick={() => changeSong(id, index)} />
+          {indexOutput}
         </div>
         <div className="songInfo">
           <img src={`/songs/images/${db.songs[db.playlists[id].songs[index]].image}.png`} />
