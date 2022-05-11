@@ -31,7 +31,6 @@ function App() {
       else nextSong()
     }
   })
-
   const changeSong = (id, index) => {
     setPlaylistId(id)
     setPlaylistSongIndex(index)
@@ -77,7 +76,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
             <Route path="/yourlibrary" element={<YourLibrary />} />
-            <Route path="/playlist/:id" element={<Playlist changeSong={changeSong} playlistId={playlistId} playlistSongIndex={playlistSongIndex} paused={paused} />} />
+            <Route path="/playlist/:id" element={<Playlist changeSong={changeSong} playlistId={playlistId} playlistSongIndex={playlistSongIndex} pause={pause} paused={paused} />} />
             <Route path="/yourepisodes" element={<YourEpisodes />} />
           </Routes>
           <Topbar />

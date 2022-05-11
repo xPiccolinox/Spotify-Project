@@ -6,14 +6,13 @@ import SongBar from './SongBar/SongBar'
 import SongButtonsRight from './SongButtonsRight/SongButtonsRight'
 
 const Player = (props) => {  
-  let playlistId = props.playlistId
-  let song = db.playlists[playlistId].songs[props.playlistSongIndex]
-  
+  let song = db.playlists[props.playlistId].songs[props.playlistSongIndex]
+
   return(
     <div className="player">
       <SongInfo song={song} />
       <SongButtons  shuffle={props.shuffle} previousSong={props.previousSong} pause={props.pause} nextSong={props.nextSong} repeat={props.repeat} props={[props.shuffled, props.paused, props.repeated]} />
-      <SongBar song={song} playlistSongIndex={props.playlistSongIndex} />
+      <SongBar song={song} playlistSongIndex={props.playlistSongIndex} playlistId={props.playlistId}/>
       <SongButtonsRight />
     </div>
   )

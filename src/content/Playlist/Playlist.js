@@ -3,7 +3,7 @@ import db from '../../data/db.json'
 import './Playlist.css'
 import PlaylistImage from '../components/PlaylistImage/PlaylistImage'
 
-const Playlist = ({ changeSong, playlistId, playlistSongIndex, paused }) => {
+const Playlist = ({ changeSong, playlistId, playlistSongIndex, pause, paused }) => {
   const { id } = useParams()
   let playlistType
   let playlistAuthor
@@ -19,10 +19,17 @@ const Playlist = ({ changeSong, playlistId, playlistSongIndex, paused }) => {
         </div>
       )
     })
-    let indexOutput
     let idOutput
-    if (playlistId == id && playlistSongIndex == index && paused == false) {
+    let imageOutput = `/icons/content/icon_songPaused_true.png`
+    let playPauseButton = <img src={imageOutput} alt="play/pause.png" onClick={() => changeSong(id, index)} />
+    if (playlistId == id && playlistSongIndex == index){
       idOutput = "currentSong"
+      imageOutput = `/icons/content/icon_songPaused_${paused}.png`
+      // Bug
+      playPauseButton = <img src={imageOutput} alt="play/pause.png" onClick={() => pause()}/>
+    }
+    let indexOutput = index + 1
+    if (playlistId == id && playlistSongIndex == index && paused == false)  {
       indexOutput = (
       <div id="currentSongAnimation">
         <div id="currentSongAnimation1"></div>
@@ -32,7 +39,6 @@ const Playlist = ({ changeSong, playlistId, playlistSongIndex, paused }) => {
       </div>
       )
     }
-    else indexOutput = index + 1
 
     if (Math.floor(db.songs[db.playlists[id].songs[index]].duration % 60) < 10) songDuration = `${Math.floor(db.songs[db.playlists[id].songs[index]].duration / 60)}:0${Math.floor(db.songs[db.playlists[id].songs[index]].duration % 60)}`
     else songDuration = `${Math.floor(db.songs[db.playlists[id].songs[index]].duration / 60)}:${Math.floor(db.songs[db.playlists[id].songs[index]].duration % 60)}`
@@ -40,7 +46,7 @@ const Playlist = ({ changeSong, playlistId, playlistSongIndex, paused }) => {
     return (
       <div key={index} className="song" id={idOutput} onDoubleClick={() => changeSong(id, index)}>
         <div className="songIndex">
-          <img src="/icons/content/icon_songPaused_true.png" alt="play" onClick={() => changeSong(id, index)} />
+          {playPauseButton}
           {indexOutput}
         </div>
         <div className="songInfo">

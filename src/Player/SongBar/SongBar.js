@@ -19,7 +19,7 @@ const SongBar = (props) => {
 
   useEffect(() => {
     document.getElementById('audioPlayer').load()
-  }, [props.playlistSongIndex])
+  }, [props.playlistSongIndex, props.playlistId])
 
   useEffect(() => {
     let audioPlayer = document.getElementById('audioPlayer')

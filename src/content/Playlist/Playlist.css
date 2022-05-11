@@ -105,6 +105,7 @@
   position: absolute;
   height: 12px;
   filter: opacity(0);
+  z-index: 1;
   transform: translate(calc(-50% + 5px), calc(-50% + 9px));
 }
 #playlist .song:nth-child(n+2):hover .songIndex{
@@ -187,6 +188,12 @@
 #playlist .song:nth-child(n+2):hover .songIndex #currentSongAnimation {
   filter: opacity(0);
 }
+#playlist #currentSong .songIndex {
+  color: #44dd44;
+}
+#playlist #currentSong:hover .songIndex {
+  color: #44dd4400;
+}
 #playlist #currentSong .songInfo .songTitleAuthors .songTitle {
-  color: #44ee44;
+  color: #44dd44;
 }
