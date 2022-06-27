@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+<div align="center">
+  <img src="ReadMeFiles/spotifyCloneApp.png" width="300" alt="spotifyCloneApp.png">
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Spotify Clone App
 
-## Available Scripts
+React clone of the **Spotify** application.  
+In order to understand React in practice, I needed some application to learn from, but I didn't want to make YouTube or Netflix, and as I love listening to music while programming, I thought that Spotify was the best choice.  
+<br />
 
-In the project directory, you can run:
+ # Application screenshots
 
-### `npm start`
+> ## Screenshot #1
+>
+> <img src="readMeFiles/application.png" width="800" alt="application.png">  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> ## Screenshot #2
+>
+> <img src="readMeFiles/application2.png" width="800" alt="application2.png">  
+<br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ # Current features
 
-### `npm test`
+> ##  Navbar
+> 
+> ### Main navigation tool
+>  
+> <img src="readMeFiles/navbar.png" width="200" alt="navbar.png">
+> 
+> ## Notes:
+>
+> ### Currently working:
+>
+> - Home
+> - Liked Songs  
+> <br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br />
 
-### `npm run build`
+> ##  Playlists
+> 
+> ### Redirects you to the playlist screen (more about that below) of your choice
+>
+> <img src="readMeFiles/playlists.png" width="200" alt="playlists.png">  
+<br />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> ##  Current song tile
+> 
+> ### Displays current song's image, title and author
+>
+> <img src="readMeFiles/currentSong.png" width="360" alt="currentSong.png">
+>
+> ## Notes:  
+> 
+> ### Like song button doesn't work (but shows if the song is in **liked songs playlist**)

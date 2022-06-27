@@ -9,6 +9,11 @@ const Playlist = ({ changeSong, playlistId, playlistSongIndex, pause, paused }) 
   let playlistAuthor
   let playlistAuthorImage
   let playlistSongsCount = db.playlists[id].songs.length
+  let playlistPlayImage = <img src="/icons/content/icon_paused_true.png" onClick={() => changeSong(id, 0)} />
+  let playlistPlayImageSrc = `/icons/content/icon_paused_${paused}.png`
+  if (playlistId == id) {
+    playlistPlayImage = <img src={playlistPlayImageSrc} onClick={() => pause()} />
+  }
   let songsList = db.playlists[id].songs.map((song, index) => {
     let songDuration
     let songsAuthors = db.songs[db.playlists[id].songs[index]].authors.map((author, index) => {
@@ -25,7 +30,6 @@ const Playlist = ({ changeSong, playlistId, playlistSongIndex, pause, paused }) 
     if (playlistId == id && playlistSongIndex == index){
       idOutput = "currentSong"
       imageOutput = `/icons/content/icon_songPaused_${paused}.png`
-      // Bug
       playPauseButton = <img src={imageOutput} alt="play/pause.png" onClick={() => pause()}/>
     }
     let indexOutput = index + 1
@@ -92,7 +96,7 @@ const Playlist = ({ changeSong, playlistId, playlistSongIndex, pause, paused }) 
         </div>
       </div>
       <div id="playlistNavbar">
-        <img src="/icons/content/icon_paused_true.png" onClick={() => changeSong(id, 0)} />
+        {playlistPlayImage}
       </div>
       <div id="songsList">
         <div className="song">
