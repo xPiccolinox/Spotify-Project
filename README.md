@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="ReadMeFiles/spotifyCloneApp.png" width="300" alt="spotifyCloneApp.png">
+  <img src="readMeFiles/spotifyCloneApp.png" width="300" alt="spotifyCloneApp.png">
 </div>
 
 # Spotify Clone App
