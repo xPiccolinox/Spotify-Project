@@ -13,7 +13,7 @@ const Player = (props) => {
       <SongInfo song={song} />
       <SongButtons  shuffle={props.shuffle} previousSong={props.previousSong} pause={props.pause} nextSong={props.nextSong} repeat={props.repeat} props={[props.shuffled, props.paused, props.repeated]} />
       <SongBar song={song} playlistSongIndex={props.playlistSongIndex} playlistId={props.playlistId}/>
-      <SongButtonsRight />
+      <SongButtonsRight fullscreenChange={props.fullscreenChange} fullscreened={props.fullscreened} />
     </div>
   )
 }

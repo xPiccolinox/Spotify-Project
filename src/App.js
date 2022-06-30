@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import db from './data/db.json'
+import Fullscreen from './Fullscreen/Fullscreen'
 import Navbar from './Navbar/Navbar'
 import Topbar from './Topbar/Topbar'
 import Home from './content/Home/Home'
@@ -18,6 +19,7 @@ function App() {
   const [shuffled, setShuffled] = useState(false)
   const [paused, setPaused] = useState(true)
   const [repeated, setRepeated] = useState(0)
+  const [fullscreened, setFullscreened] = useState(false)
   let audioPlayer = document.getElementById('audioPlayer')
 
   useEffect(() => {
@@ -67,9 +69,24 @@ function App() {
     if (repeated >= 2) setRepeated(0)    
   }
 
+  const fullscreenChange = () => {
+    setFullscreened(!fullscreened)
+    if (fullscreened == false) {
+      document.getElementById('fullscreen').style.zIndex = "2"
+      document.getElementById('fullscreen').style.filter = "opacity(1)"
+    }
+    else {
+      setTimeout(() => {
+        if (fullscreened == false) document.getElementById('fullscreen').style.zIndex = "-2"
+      }, 500)
+      document.getElementById('fullscreen').style.filter = "opacity(0)"
+    }
+  }
+
   return (
     <BrowserRouter>
       <div className="App">
+        <Fullscreen fullscreenChange={fullscreenChange}/>
         <Navbar />
         <div className="content">
           <Routes>
@@ -82,7 +99,7 @@ function App() {
           <Topbar />
         </div>
         <Friends />
-        <Player playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} />
+        <Player playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreenChange={fullscreenChange} fullscreened={fullscreened} />
       </div>
     </BrowserRouter>
   );

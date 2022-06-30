@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react'
 import './SongButtonsRight.css'
 
-const SongButtonsRight = () => {
+const SongButtonsRight = (props) => {
   const [queued, setQueued] = useState(false)
   const [volume, setVolume] = useState(2)
-  const [fullscreened, setFullscreened] = useState(false)
   const [previousVolume, setPreviousVolume] = useState(50)
   const queueIcon = `/icons/player/icon_queue_${queued}.png`
   const volumeIcon = `/icons/player/icon_volume_${volume}.png`
-  const fullscreenIcon = `/icons/player/icon_fullscreen_${fullscreened}.png`
+  const fullscreenIcon = `/icons/player/icon_fullscreen_${props.fullscreened}.png`
   let audioPlayer = document.getElementById('audioPlayer')
   let thumbPosition
   
@@ -49,9 +48,6 @@ const SongButtonsRight = () => {
   const queueChange = () => {
     setQueued(!queued)
   }
-  const fullscreenChange = () => {
-    setFullscreened(!fullscreened)
-  }
 
   return (
     <div className="songButtonsRight">
@@ -62,7 +58,7 @@ const SongButtonsRight = () => {
         <div id="songVolumeOverlay" />
         <div id="songVolumeThumb" />
       </div>
-      <img id="songFullscreen" onClick={fullscreenChange} src={fullscreenIcon} />
+      <img id="songFullscreen" onClick={props.fullscreenChange} src={fullscreenIcon} />
     </div>
   )
 }
