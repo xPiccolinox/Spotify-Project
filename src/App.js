@@ -74,19 +74,19 @@ function App() {
     if (fullscreened == false) {
       document.getElementById('fullscreen').style.zIndex = "2"
       document.getElementById('fullscreen').style.filter = "opacity(1)"
+      setTimeout(() => {document.getElementById('fullscreenBackground').style.pointerEvents = "auto"}, 500)
     }
     else {
-      setTimeout(() => {
-        if (fullscreened == false) document.getElementById('fullscreen').style.zIndex = "-2"
-      }, 500)
+      setTimeout(() => {document.getElementById('fullscreen').style.zIndex = "-2"}, 500)
       document.getElementById('fullscreen').style.filter = "opacity(0)"
+      document.getElementById('fullscreenBackground').style.pointerEvents = "none"
     }
   }
 
   return (
     <BrowserRouter>
       <div className="App">
-        <Fullscreen fullscreenChange={fullscreenChange}/>
+        <Fullscreen fullscreenChange={fullscreenChange} playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreened={fullscreened} />
         <Navbar />
         <div className="content">
           <Routes>
@@ -99,7 +99,7 @@ function App() {
           <Topbar />
         </div>
         <Friends />
-        <Player playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreenChange={fullscreenChange} fullscreened={fullscreened} />
+        <Player playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreened={fullscreened} fullscreenChange={fullscreenChange} />
       </div>
     </BrowserRouter>
   );
