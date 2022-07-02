@@ -1,0 +1,40 @@
+#fsSongInfo {
+  /* background-color: green; */
+  display: flex;
+  width: 100%;
+  height: 25%;
+  margin-bottom: 64px;
+  padding: 0px 32px;
+  box-sizing: border-box;
+}
+#fsSongInfo #fsSongImage {
+  height: 100%;
+}
+#fsSongInfo #fsSongDesc {
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 24px;
+  height: 100%;
+  padding-left: 64px;
+  box-sizing: border-box;
+}
+#fsSongInfo #fsSongDesc #fsTitle {
+  color: #fff;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 64px;
+}
+#fsSongInfo #fsSongDesc #fsAuthors {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+#fsSongInfo #fsSongDesc #fsAuthors * {
+  color: #aaa;
+  flex-shrink: 0;
+}

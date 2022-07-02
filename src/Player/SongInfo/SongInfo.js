@@ -29,7 +29,7 @@ const SongInfo = ({ changeSong, song }) => {
     })
     document.getElementById('authors').style.width = `${authorsWidth}px`
 
-    setDescWidth(parseInt(window.getComputedStyle(document.getElementById('desc')).width))
+    setDescWidth(parseInt(window.getComputedStyle(document.getElementById('songDesc')).width))
     setTitleWidth(parseInt(window.getComputedStyle(document.getElementById('title')).width))
     setAuthorsWidth(parseInt(window.getComputedStyle(document.getElementById('authors')).width))
   }, [authors])
@@ -64,8 +64,8 @@ const SongInfo = ({ changeSong, song }) => {
 
   return (
     <div id="songInfo">
-      <img id="song_image" src={ image } alt="Song_Image" onClick={changeSong} />
-      <div id="desc">
+      <img id="song_image" src={ image } alt="Song_Image" />
+      <div id="songDesc">
         <div id="overlayLeft" />
         <div id="overlayRight" />
         <div id="title" onMouseOver={titleOnMouseOver}><Link to="">{ title }</Link></div><br />

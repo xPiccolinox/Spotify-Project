@@ -1,0 +1,10 @@
+#fsPlayer {
+  /* background-color: purple; */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

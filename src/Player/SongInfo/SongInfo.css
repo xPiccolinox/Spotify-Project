@@ -26,7 +26,7 @@
   filter: brightness(1.3);
   transform: translateX(2px);
 }
-#songInfo #desc {
+#songInfo #songDesc {
   position: relative;
   float: left;
   margin-left: 10px;
@@ -38,7 +38,7 @@
   text-overflow: ellipsis;
 }
 
-#songInfo #desc #overlayLeft {
+#songInfo #songDesc #overlayLeft {
   background-image: linear-gradient(to right, #181818, #18181800);
   position: absolute;
   left: 0px;
@@ -46,7 +46,7 @@
   height: 100%;
   z-index: 1;
 }
-#songInfo #desc #overlayRight {
+#songInfo #songDesc #overlayRight {
   background-image: linear-gradient(to right, #18181800, #181818);
   position: absolute;
   right: 0px;
@@ -54,7 +54,7 @@
   height: 100%;
   z-index: 1;
 }
-#songInfo #desc #title {
+#songInfo #songDesc #title {
   color: #ffffff;
   font-size: 12px;
   font-weight: 500;
@@ -63,31 +63,31 @@
   left: 0px;
   transition: left 3s ease-in-out 1s
 }
-#songInfo #desc #title a {
+#songInfo #songDesc #title a {
   text-decoration: none;
 }
-#songInfo #desc #title a:hover {
+#songInfo #songDesc #title a:hover {
   text-decoration: underline;
 }
-#songInfo #desc #authors {
+#songInfo #songDesc #authors {
   position: relative;
   height: 14px;
   left: 0px;
   transition: left 3s ease-in-out 1s
 }
-#songInfo #desc #authors div {
+#songInfo #songDesc #authors div {
   color: #bbbbbb;
   font-size: 10px;
   font-weight: 500;
   float: left;
 }
-#songInfo #desc #authors div a {
+#songInfo #songDesc #authors div a {
   color: #bbbbbb;
   font-size: inherit;
   font-weight: inherit;
   text-decoration: none;
 }
-#songInfo #desc #authors div a:hover {
+#songInfo #songDesc #authors div a:hover {
   color: #ffffff;
   text-decoration: underline;
 }
