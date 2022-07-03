@@ -11,7 +11,7 @@ const FsPlayer = (props) => {
     <div id="fsPlayer">
       <FsSongInfo song={song} />
       <FsSongBar />
-      <FsSongButtons />
+      <FsSongButtons song={song} fullscreened={props.fullscreened} fullscreenChange={props.fullscreenChange}/>
     </div>
   )
 }
