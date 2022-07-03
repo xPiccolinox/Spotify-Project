@@ -11,7 +11,7 @@
   background: linear-gradient(180deg, #230b58, #121212);
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   width: 100%;
   height: 100%;
   padding: 5%;

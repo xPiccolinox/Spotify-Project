@@ -155,7 +155,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2px;
-  align-items: end;
+  align-items: flex-end;
   position: relative;
   width: 14px;
   height: 14px;
