@@ -1,7 +1,6 @@
 #fsSongButtons {
-  /* background-color: Cyan; */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 10%;
@@ -11,14 +10,63 @@
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
 }
+#fsSongButtons img:hover {
+  filter: brightness(1.5);
+}
+#fsSongButtons img:active {
+  filter: brightness(1);
+}
+/* Left side buttons */
 #fsSongButtons #fsSongLike {
+  position: absolute;
+  left: 0px;
   height: 32px;
 }
+/* Middle buttons */
+#fsSongButtons #fsSongButtonsMiddle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 360px;
+}
+#fsSongButtons #fsSongButtonsMiddle img:nth-child(1) {
+  position: absolute;
+  left: 0px;
+}
+#fsSongButtons #fsSongButtonsMiddle img:nth-child(2) {
+  position: absolute;
+  left: 76px;
+}
+#fsSongButtons #fsSongButtonsMiddle img:nth-child(4) {
+  position: absolute;
+  right: 76px;
+}
+#fsSongButtons #fsSongButtonsMiddle img:nth-child(5) {
+  position: absolute;
+  right: 0px;
+}
+#fsSongButtons #fsSongButtonsMiddle img:nth-child(1):hover, img:nth-child(2):hover {
+  transform: translateX(-4px);
+}
+#fsSongButtons #fsSongButtonsMiddle img:nth-child(4):hover, img:nth-child(5):hover {
+  transform: translateX(4px);
+}
+#fsSongButtons #fsSongButtonsMiddle img {
+  width: 40px;
+}
+#fsSongButtons #fsSongButtonsMiddle img:hover {
+  width: 48px;
+}
+/* Right side buttons */
+#fsSongButtons #fsSongButtonsRight {
+  position: absolute;
+  right: 0px;
+}
 #fsSongButtons #fsSongButtonsRight #fsSongFullscreenImg {
-  height: 64px;
+  height: 48px;
 }
 #fsSongButtons #fsSongButtonsRight #fsSongFullscreenImg:hover {
-  height: 80px;
-  filter: brightness(1.5);
+  height: 64px;
   transform: translateX(8px);
 }

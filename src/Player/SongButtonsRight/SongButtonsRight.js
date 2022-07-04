@@ -7,7 +7,7 @@ const SongButtonsRight = (props) => {
   const [previousVolume, setPreviousVolume] = useState(50)
   const queueIcon = `/icons/player/icon_queue_${queued}.png`
   const volumeIcon = `/icons/player/icon_volume_${volume}.png`
-  const fullscreenIcon = `/icons/player/icon_fullscreen_${props.fullscreened}.png`
+  const fullscreenIcon = `/icons/player/icon_fullscreen_false.png`
   let audioPlayer = document.getElementById('audioPlayer')
   let thumbPosition
   
