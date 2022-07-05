@@ -1,11 +1,19 @@
 #fullscreen {
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   width: 100vw;
   height: 100vh;
   z-index: -2;
   filter: opacity(0);
   transition: filter 0.5s ease-in-out;
+  overflow: hidden;
+}
+#fullscreen #fullscreenBackgroundImg {
+  position: absolute;
+  width: 100%;
+  filter: brightness(0.2)
 }
 #fullscreen #fullscreenBackground {
   background: linear-gradient(180deg, #230b58, #121212);

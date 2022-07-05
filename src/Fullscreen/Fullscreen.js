@@ -1,13 +1,17 @@
 import './Fullscreen.css'
 import db from './../data/db.json'
 import FsPlayer from './FsPlayer/FsPlayer'
+import { useEffect } from 'react'
 
 const Fullscreen = (props) => {
+  let song = db.playlists[props.playlistId].songs[props.playlistSongIndex]
+  let fsBackground = '/songs/backgrounds/' + db.songs[song].image + '.png'
+
   return(
     <div id="fullscreen">
-      {/* <div id="fullscreenBackground"  onClick={props.fullscreenChange}> */}
+      <img id="fullscreenBackgroundImg" src={fsBackground} />
       <div id="fullscreenBackground">
-        <FsPlayer playlistId={props.playlistId} playlistSongIndex={props.playlistSongIndex} nextSong={props.nextSong} previousSong={props.previousSong} shuffle={props.shuffle} pause={props.pause} repeat={props.repeat} shuffled={props.shuffled} paused={props.paused} repeated={props.repeated} fullscreened={props.fullscreened} fullscreenChange={props.fullscreenChange} />
+        <FsPlayer song={song} nextSong={props.nextSong} previousSong={props.previousSong} shuffle={props.shuffle} pause={props.pause} repeat={props.repeat} shuffled={props.shuffled} paused={props.paused} repeated={props.repeated} fullscreened={props.fullscreened} fullscreenChange={props.fullscreenChange} />
       </div>
     </div>
   )
