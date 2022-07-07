@@ -1,7 +1,7 @@
 import './Fullscreen.css'
+import { useEffect } from 'react'
 import db from './../data/db.json'
 import FsPlayer from './FsPlayer/FsPlayer'
-import { useEffect } from 'react'
 
 const Fullscreen = (props) => {
   let song = db.playlists[props.playlistId].songs[props.playlistSongIndex]
