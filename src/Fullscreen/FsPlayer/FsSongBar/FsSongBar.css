@@ -1,6 +1,61 @@
 #fsSongBar {
-  /* background-color: orange; */
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 5%;
+}
+/* Time Left */
+#fsSongCurrentTime {
+  width: 100px;
+  text-align: left;
+}
+/* Time Right */
+#fsSongDurationTime {
+  float: left;
+  width: 100px;
+  text-align: right;
+}
+/* Song Range bar */
+#fsSongRange {
+  background-color: black;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: calc(100% - 200px);
+  height: 100%;
+}
+#fsSongRange #fsSongRangeOverlay {
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  width: calc(100% - 4px);
+  height: 10px;
+  border-radius: 99999px;
+  overflow: hidden;
+}
+#fsSongRange #fsSongRangeOverlay #fsSongRangeProgress {
+  flex-shrink: 0;
+  width: calc(100%);
+  height: 10px;
+  /* border-width: 6px 0px 6px 0px;
+  border-style: solid;
+  border-color: #ff000000; */
+  padding-top: 5px;
+  transform: translateX(-4px);
+  /* overflow: hidden; */
+  box-sizing: content-box;
+  appearance: none;
+}
+#fsSongRange #fsSongRangeOverlay #fsSongRangeProgress::-webkit-slider-thumb {
+  background-color: #cccccc;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  box-shadow: -1002px 0px 0px 1000px #cccccc;
+  appearance: none;
+}
+#fsSongRange #fsSongRangeOverlay #fsSongRangeProgress:hover::-webkit-slider-thumb {
+  background-color: #1eb955;
+  box-shadow: -1002px 0px 0px 1000px #1eb955;
 }
