@@ -34,9 +34,11 @@ const FsSongBar = (props) => {
     <div id="fsSongBar">
         <div id="fsSongCurrentTime">{songCurrentTime}</div>
         <div id="fsSongRange">
+          <input id="fsSongRangeInput" type="range" min="0" max={audioPlayerDuration} />
           <div id="fsSongRangeOverlay">
-            <input id="fsSongRangeProgress" type="range" min="0" max={audioPlayerDuration} />
+            <div id="fsSongRangeProgress" />
           </div>
+          <div id="fsSongRangeThumb" />
         </div>
         {/* <div id="fsSongRange">
           <div id="fsSongRangeOverlay">
@@ -114,4 +116,38 @@ export default FsSongBar
 // #fsSongRangeProgress:hover::-webkit-slider-thumb {
 //   background-color: #1eb955;
 //   box-shadow: -1002px 0px 0px 1000px #1eb955
+// }
+
+
+
+// #fsSongRange #fsSongRangeOverlay {
+//   /* background-color: blue; */
+//   display: flex;
+//   align-items: center;
+//   width: calc(100% - 4px);
+//   height: 4px;
+//   border-radius: 4px;
+//   overflow: hidden;
+// }
+// #fsSongRange #fsSongRangeOverlay #fsSongRangeProgress {
+//   flex-shrink: 0;
+//   width: calc(100%);
+//   height: 4px;
+//   border-radius: 4px;
+//   transform: translateX(-4px);
+//   overflow: hidden;
+//   box-sizing: content-box;
+//   appearance: none;
+// }
+// #fsSongRange #fsSongRangeOverlay #fsSongRangeProgress::-webkit-slider-thumb {
+//   background-color: #cccccc;
+//   border-radius: 50%;
+//   width: 4px;
+//   height: 4px;
+//   box-shadow: -1002px 0px 0px 1000px #cccccc;
+//   appearance: none;
+// }
+// #fsSongRange #fsSongRangeOverlay #fsSongRangeProgress:hover::-webkit-slider-thumb {
+//   background-color: #1eb95500;
+//   box-shadow: -1002px 0px 0px 1000px #1eb955;
 // }
