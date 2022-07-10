@@ -18,18 +18,18 @@
 }
 /* Song Range bar */
 #fsSongRange {
-  background-color: black;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: calc(100% - 200px);
+  width: calc(100% - 240px);
   height: 100%;
 }
 #fsSongRangeInput {
-  width: 100%;
-  height: 10px;
-  filter: opacity(1);
+  position: absolute;
+  width: calc(100% + 16px);
+  height: 16px;
+  /* filter: opacity(0); */
   transform: translateY(200%);
   z-index: 1;
 }
@@ -38,7 +38,7 @@
   position: absolute;
   display: flex;
   width: 100%;
-  height: 6px;
+  height: 4px;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -47,9 +47,9 @@
   position: absolute;
   display: block;
   width: 100%;
-  height: 6px;
+  height: 4px;
   right: 70%;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 #fsSongRangeInput:hover ~ #fsSongRangeOverlay #fsSongRangeProgress {
   background-color: #1eb955;
@@ -57,12 +57,12 @@
 #fsSongRange #fsSongRangeThumb {
   position: absolute;
   background-color: #cccccc;
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   right: 70%;
-  border-radius: 10px;
+  border-radius: 14px;
   transform: translateX(50%);
-  filter: opacity(0);
+  filter: opacity(1);
 }
 #fsSongRangeInput:hover ~ #fsSongRangeThumb {
   background-color: #1eb955;

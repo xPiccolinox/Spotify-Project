@@ -20,7 +20,18 @@ function App() {
   const [paused, setPaused] = useState(true)
   const [repeated, setRepeated] = useState(0)
   const [fullscreened, setFullscreened] = useState(false)
+
+  const [audioPlayerDuration, setAudioPlayerDuration] = useState(123)
+  const [audioPlayerCurrentTime, setAudioPlayerCurrentTime] = useState(0)
+  const [songRangeProgressStill, setSongRangeProgressStill] = useState(false)
+
+  let song = db.playlists[playlistId].songs[playlistSongIndex]
+  let audio = `/songs/${song}.mp3`
   let audioPlayer = document.getElementById('audioPlayer')
+
+  useEffect(() => {
+    document.getElementById('audioPlayer').load()
+  }, [playlistSongIndex, playlistId])
 
   useEffect(() => {
     audioPlayer = document.getElementById('audioPlayer')
@@ -32,7 +43,16 @@ function App() {
       }
       else nextSong()
     }
+    audioPlayer.onloadedmetadata = () => {
+      setAudioPlayerDuration(audioPlayer.duration)
+    }
+    audioPlayer.ontimeupdate = () => {
+      if (Math.floor(audioPlayer.currentTime) !== audioPlayerCurrentTime && songRangeProgressStill == false) {
+        setAudioPlayerCurrentTime(Math.floor(audioPlayer.currentTime))
+      }
+    }
   })
+
   const changeSong = (id, index) => {
     setPlaylistId(id)
     setPlaylistSongIndex(index)
@@ -83,10 +103,20 @@ function App() {
     }
   }
 
+  const onMouseDownSongBarsHandle = () => {
+    console.log('Grab')
+  }
+  const onMouseUpSongBarsHandle = () => {
+    console.log('Ungrab')
+  }
+
   return (
     <BrowserRouter>
       <div className="App">
-        <Fullscreen fullscreenChange={fullscreenChange} playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreened={fullscreened} />
+        <audio id="audioPlayer">
+          <source src={audio} />
+        </audio>
+        <Fullscreen fullscreenChange={fullscreenChange} playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreened={fullscreened} audioPlayerDuration={audioPlayerDuration} audioPlayerCurrentTime={audioPlayerCurrentTime} onMouseDownSongBarsHandle={onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={onMouseUpSongBarsHandle} />
         <Navbar />
         <div className="content">
           <Routes>
@@ -99,7 +129,7 @@ function App() {
           <Topbar />
         </div>
         <Friends />
-        <Player playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreened={fullscreened} fullscreenChange={fullscreenChange} />
+        <Player playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreened={fullscreened} fullscreenChange={fullscreenChange} audioPlayerDuration={audioPlayerDuration} audioPlayerCurrentTime={audioPlayerCurrentTime} onMouseDownSongBarsHandle={onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={onMouseUpSongBarsHandle} />
       </div>
     </BrowserRouter>
   );
