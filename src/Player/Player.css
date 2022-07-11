@@ -1,6 +1,7 @@
 .player {
   background-color: #181818;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   position: absolute;
   width: 100%;
@@ -9,8 +10,5 @@
   box-sizing: border-box;
   border-top: 1px solid #303030;
   padding: 16px;
-}
-#fullscreen .player{
-  top: 0px;
-  bottom: auto;
+  overflow: hidden;
 }

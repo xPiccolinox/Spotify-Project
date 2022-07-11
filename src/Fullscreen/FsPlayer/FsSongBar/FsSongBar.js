@@ -13,6 +13,8 @@ const FsSongBar = (props) => {
 
   useEffect(() => {
     document.getElementById('fsSongRangeInput').value = props.audioPlayerCurrentTime
+    document.getElementById('fsSongRangeProgress').style.right = `${100 - props.audioPlayerCurrentTime / props.audioPlayerDuration * 100}%`
+    document.getElementById('fsSongRangeThumb').style.right = `${100 - props.audioPlayerCurrentTime * 100}%`
   })
 
   const onChangeHandle = (e) => {
@@ -30,12 +32,6 @@ const FsSongBar = (props) => {
           </div>
           <div id="fsSongRangeThumb" />
         </div>
-        {/* <div id="fsSongRange">
-          <div id="fsSongRangeOverlay">
-            <input id="fsSongRangeProgress" type="range" min="0" max={audioPlayerDuration} onChange={onChangeHandle} />
-          </div>
-          <div id="fsSongRangeThumb" />
-        </div> */}
         <div id="fsSongDurationTime">{songDurationTime}</div>
     </div>
   )

@@ -46,16 +46,16 @@ const SongBar = (props) => {
 
 
   return (
-    <div className="songBar">
-      <div className="songTime">
+    <div id="songBar">
         <div id="songCurrentTime">{songCurrentTime}</div>
         <div id="songRange">
-          <input id="songRangeProgress" type="range" min="0" max={props.audioPlayerDuration} onChange={onChangeHandle} onMouseDown={props.onMouseDownSongBarsHandle} onMouseUp={props.onMouseUpSongBarsHandle}/>
-          <div id="songRangeOverlay" />
+          <input id="songRangeInput" type="range" min="0" max={props.audioPlayerDuration} onChange={onChangeHandle} onMouseDown={props.onMouseDownSongBarsHandle} onMouseUp={props.onMouseUpSongBarsHandle} />
+          <div id="songRangeOverlay">
+            <div id="songRangeProgress" />
+          </div>
           <div id="songRangeThumb" />
         </div>
         <div id="songDurationTime">{songDurationTime}</div>
-      </div>
     </div>
   )
 

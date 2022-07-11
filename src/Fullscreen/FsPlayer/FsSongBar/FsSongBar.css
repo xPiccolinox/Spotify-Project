@@ -62,9 +62,8 @@
   right: 70%;
   border-radius: 14px;
   transform: translateX(50%);
-  filter: opacity(1);
+  filter: opacity(0);
 }
 #fsSongRangeInput:hover ~ #fsSongRangeThumb {
-  background-color: #1eb955;
   filter: opacity(1);
 }
