@@ -103,11 +103,12 @@ function App() {
     }
   }
 
-  const onMouseDownSongBarsHandle = () => {
+  const onMouseDownSongBarsHandle = (e) => {
     console.log('Grab')
   }
-  const onMouseUpSongBarsHandle = () => {
+  const onMouseUpSongBarsHandle = (e) => {
     console.log('Ungrab')
+    audioPlayer.currentTime = e.target.value
   }
 
   return (

@@ -31,7 +31,7 @@ const SongBar = (props) => {
   })
 
   const onChangeHandle = () => {
-    // let audioPlayer = document.getElementById('audioPlayer')
+    let audioPlayer = document.getElementById('audioPlayer')
     // document.getElementById('songRangeProgress').addEventListener('mousedown', () => {
     //   setSongRangeProgressStill(true)
     // })
@@ -58,8 +58,6 @@ const SongBar = (props) => {
         <div id="songDurationTime">{songDurationTime}</div>
     </div>
   )
-
-  
 }
 
 export default SongBar
