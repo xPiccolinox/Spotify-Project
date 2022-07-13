@@ -3,11 +3,12 @@ import { useState, useEffect } from 'react'
 import db from '../../../data/db.json'
 
 const FsSongBar = (props) => {
+  const [songRangeInputValue, setSongRangeInputValue] = useState(0)
   let songCurrentTime = '0:00'
   let songDurationTime = '0:00'
 
-  if (Math.floor(props.audioPlayerCurrentTime % 60) < 10) songCurrentTime = `${Math.floor(props.audioPlayerCurrentTime / 60)}:0${Math.floor(props.audioPlayerCurrentTime % 60)}`
-  else songCurrentTime = `${Math.floor(props.audioPlayerCurrentTime / 60)}:${Math.floor(props.audioPlayerCurrentTime % 60)}`
+  if (Math.floor(props.audioPlayerCurrentTime % 60) < 10) songCurrentTime = `${Math.floor(songRangeInputValue / 60)}:0${Math.floor(songRangeInputValue % 60)}`
+  else songCurrentTime = `${Math.floor(songRangeInputValue / 60)}:${Math.floor(songRangeInputValue % 60)}`
   if (Math.floor(props.audioPlayerDuration % 60) < 10) songDurationTime = `${Math.floor(props.audioPlayerDuration / 60)}:0${Math.floor(props.audioPlayerDuration % 60)}`
   else songDurationTime = `${Math.floor(props.audioPlayerDuration / 60)}:${Math.floor(props.audioPlayerDuration % 60)}`
 
@@ -20,6 +21,7 @@ const FsSongBar = (props) => {
   const onChangeHandle = (e) => {
     document.getElementById('fsSongRangeProgress').style.right = `${100 - e.target.value / props.audioPlayerDuration * 100}%`
     document.getElementById('fsSongRangeThumb').style.right = `${100 - e.target.value / props.audioPlayerDuration * 100}%`
+    setSongRangeInputValue(e.target.value)
   }
 
   return(
