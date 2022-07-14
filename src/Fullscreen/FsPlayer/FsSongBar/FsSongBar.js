@@ -7,7 +7,7 @@ const FsSongBar = (props) => {
   let songCurrentTime = '0:00'
   let songDurationTime = '0:00'
 
-  if (Math.floor(props.audioPlayerCurrentTime % 60) < 10) songCurrentTime = `${Math.floor(songRangeInputValue / 60)}:0${Math.floor(songRangeInputValue % 60)}`
+  if (Math.floor(songRangeInputValue % 60) < 10) songCurrentTime = `${Math.floor(songRangeInputValue / 60)}:0${Math.floor(songRangeInputValue % 60)}`
   else songCurrentTime = `${Math.floor(songRangeInputValue / 60)}:${Math.floor(songRangeInputValue % 60)}`
   if (Math.floor(props.audioPlayerDuration % 60) < 10) songDurationTime = `${Math.floor(props.audioPlayerDuration / 60)}:0${Math.floor(props.audioPlayerDuration % 60)}`
   else songDurationTime = `${Math.floor(props.audioPlayerDuration / 60)}:${Math.floor(props.audioPlayerDuration % 60)}`
