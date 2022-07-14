@@ -119,7 +119,7 @@ function App() {
         <audio id="audioPlayer">
           <source src={audio} />
         </audio>
-        <Fullscreen fullscreenChange={fullscreenChange} playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreened={fullscreened} audioPlayerDuration={audioPlayerDuration} audioPlayerCurrentTime={audioPlayerCurrentTime} onMouseDownSongBarsHandle={onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={onMouseUpSongBarsHandle} />
+        <Fullscreen fullscreenChange={fullscreenChange} playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreened={fullscreened} audioPlayerDuration={audioPlayerDuration} audioPlayerCurrentTime={audioPlayerCurrentTime} onMouseDownSongBarsHandle={onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={onMouseUpSongBarsHandle} songRangeProgressStill={songRangeProgressStill} />
         <Navbar />
         <div className="content">
           <Routes>
@@ -132,7 +132,7 @@ function App() {
           <Topbar />
         </div>
         <Friends />
-        <Player playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreened={fullscreened} fullscreenChange={fullscreenChange} audioPlayerDuration={audioPlayerDuration} audioPlayerCurrentTime={audioPlayerCurrentTime} onMouseDownSongBarsHandle={onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={onMouseUpSongBarsHandle} />
+        <Player playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreened={fullscreened} fullscreenChange={fullscreenChange} audioPlayerDuration={audioPlayerDuration} audioPlayerCurrentTime={audioPlayerCurrentTime} onMouseDownSongBarsHandle={onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={onMouseUpSongBarsHandle} songRangeProgressStill={songRangeProgressStill} />
       </div>
     </BrowserRouter>
   );

@@ -9,7 +9,7 @@ const FsPlayer = (props) => {
   return(
     <div id="fsPlayer">
       <FsSongInfo song={props.song} />
-      <FsSongBar audioPlayerDuration={props.audioPlayerDuration} audioPlayerCurrentTime={props.audioPlayerCurrentTime} onMouseDownSongBarsHandle={props.onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={props.onMouseUpSongBarsHandle} />
+      <FsSongBar audioPlayerDuration={props.audioPlayerDuration} audioPlayerCurrentTime={props.audioPlayerCurrentTime} onMouseDownSongBarsHandle={props.onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={props.onMouseUpSongBarsHandle} songRangeProgressStill={props.songRangeProgressStill} />
       <FsSongButtons song={props.song} shuffled={props.shuffled} paused={props.paused} repeated={props.repeated} shuffle={props.shuffle} previousSong={props.previousSong} pause={props.pause} nextSong={props.nextSong} repeat={props.repeat} fullscreenChange={props.fullscreenChange} />
     </div>
   )

@@ -13,9 +13,11 @@ const FsSongBar = (props) => {
   else songDurationTime = `${Math.floor(props.audioPlayerDuration / 60)}:${Math.floor(props.audioPlayerDuration % 60)}`
 
   useEffect(() => {
-    document.getElementById('fsSongRangeInput').value = props.audioPlayerCurrentTime
-    document.getElementById('fsSongRangeProgress').style.right = `${100 - props.audioPlayerCurrentTime / props.audioPlayerDuration * 100}%`
-    document.getElementById('fsSongRangeThumb').style.right = `${100 - props.audioPlayerCurrentTime * 100}%`
+    if (props.songRangeProgressStill == false) {
+      document.getElementById('fsSongRangeInput').value = props.audioPlayerCurrentTime
+      document.getElementById('fsSongRangeProgress').style.right = `${100 - props.audioPlayerCurrentTime / props.audioPlayerDuration * 100}%`
+      document.getElementById('fsSongRangeThumb').style.right = `${100 - props.audioPlayerCurrentTime * 100}%`
+    }
   })
 
   const onChangeHandle = (e) => {
