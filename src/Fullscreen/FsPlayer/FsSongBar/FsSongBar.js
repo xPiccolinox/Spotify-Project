@@ -16,7 +16,8 @@ const FsSongBar = (props) => {
     if (props.songRangeProgressStill == false) {
       document.getElementById('fsSongRangeInput').value = props.audioPlayerCurrentTime
       document.getElementById('fsSongRangeProgress').style.right = `${100 - props.audioPlayerCurrentTime / props.audioPlayerDuration * 100}%`
-      document.getElementById('fsSongRangeThumb').style.right = `${100 - props.audioPlayerCurrentTime * 100}%`
+      document.getElementById('fsSongRangeThumb').style.right = `${100 - props.audioPlayerCurrentTime / props.audioPlayerDuration * 100}%`
+      setSongRangeInputValue(props.audioPlayerCurrentTime)
     }
   }, [props.audioPlayerCurrentTime])
 

@@ -29,8 +29,8 @@
   position: absolute;
   width: calc(100% + 16px);
   height: 16px;
-  /* filter: opacity(0); */
-  transform: translateY(200%);
+  filter: opacity(0);
+  /* transform: translateY(100%); */
   z-index: 1;
 }
 #fsSongRangeOverlay {
