@@ -103,12 +103,10 @@ function App() {
     }
   }
 
-  const onMouseDownSongBarsHandle = (e) => {
-    console.log('Grab')
+  const onMouseDownSongBarsHandle = () => {
     setSongRangeProgressStill(true)
   }
   const onMouseUpSongBarsHandle = (e) => {
-    console.log('Ungrab')
     setSongRangeProgressStill(false)
     audioPlayer.currentTime = e.target.value
   }

@@ -18,7 +18,7 @@ const FsSongBar = (props) => {
       document.getElementById('fsSongRangeProgress').style.right = `${100 - props.audioPlayerCurrentTime / props.audioPlayerDuration * 100}%`
       document.getElementById('fsSongRangeThumb').style.right = `${100 - props.audioPlayerCurrentTime * 100}%`
     }
-  })
+  }, [props.audioPlayerCurrentTime])
 
   const onChangeHandle = (e) => {
     document.getElementById('fsSongRangeProgress').style.right = `${100 - e.target.value / props.audioPlayerDuration * 100}%`
