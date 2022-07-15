@@ -1,6 +1,5 @@
-import './FsSongBar.css'
 import { useState, useEffect } from 'react'
-import db from '../../../data/db.json'
+import './FsSongBar.css'
 
 const FsSongBar = (props) => {
   const [songRangeInputValue, setSongRangeInputValue] = useState(0)
