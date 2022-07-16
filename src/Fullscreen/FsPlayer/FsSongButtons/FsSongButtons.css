@@ -19,8 +19,10 @@
 /* Left side buttons */
 #fsSongButtons #fsSongLike {
   position: absolute;
-  left: 0px;
-  height: 32px;
+  left: 40px;
+  height: 48px;
+  padding: 12px;
+  box-sizing: border-box;
 }
 /* Middle buttons */
 #fsSongButtons #fsSongButtonsMiddle {
@@ -61,7 +63,7 @@
 /* Right side buttons */
 #fsSongButtons #fsSongButtonsRight {
   position: absolute;
-  right: 0px;
+  right: 40px;
 }
 #fsSongButtons #fsSongButtonsRight #fsSongFullscreenImg {
   height: 48px;
