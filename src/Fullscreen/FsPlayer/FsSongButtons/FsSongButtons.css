@@ -69,6 +69,8 @@
   right: 40px;
 }
 #fsSongButtons #fsSongButtonsRight #fsSongFullscreenImg {
+  position: absolute;
+  right: 0px;
   height: 48px;
 }
 #fsSongButtons #fsSongButtonsRight #fsSongFullscreenImg:hover {
@@ -76,7 +78,9 @@
   transform: translateX(8px);
 }
 #fsSongButtons #fsSongButtonsRight #fsSongVolumeButton {
+  position: absolute;
   height: 48px;
+  right: 164px;
 }
 #fsSongButtons #fsSongButtonsRight #fsSongVolumeButton:hover {
   height: 64px;
@@ -84,7 +88,9 @@
 }
 /* Song Volume Bar */
 #fsSongVolume {
-  position: relative;
+  background-color: purple;
+  position: absolute;
+  right: 56px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,6 +103,7 @@
   height: 16px;
   filter: opacity(0);
   z-index: 1;
+  /* transform: translateY(40px); */
 }
 #fsSongVolumeOverlay {
   background-color: #454545;
