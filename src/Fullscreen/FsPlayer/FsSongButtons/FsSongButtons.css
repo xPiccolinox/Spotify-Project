@@ -101,9 +101,9 @@
   position: absolute;
   width: calc(100% + 16px);
   height: 16px;
-  filter: opacity(0);
+  filter: opacity(1);
   z-index: 1;
-  /* transform: translateY(40px); */
+  transform: translateY(40px);
 }
 #fsSongVolumeOverlay {
   background-color: #454545;
@@ -120,7 +120,7 @@
   display: block;
   width: 100%;
   height: 4px;
-  right: 70%;
+  right: 50%;
   border-radius: 4px;
 }
 #fsSongVolumeInput:hover ~ #fsSongVolumeOverlay #fsSongVolumeProgress {

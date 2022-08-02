@@ -11,7 +11,7 @@ const Fullscreen = (props) => {
     <div id="fullscreen">
       <img id="fullscreenBackgroundImg" src={fsBackground} />
       <div id="fullscreenBackground">
-        <FsPlayer song={song} nextSong={props.nextSong} previousSong={props.previousSong} shuffle={props.shuffle} pause={props.pause} repeat={props.repeat} shuffled={props.shuffled} paused={props.paused} repeated={props.repeated} fullscreened={props.fullscreened} fullscreenChange={props.fullscreenChange} audioPlayerDuration={props.audioPlayerDuration} audioPlayerCurrentTime={props.audioPlayerCurrentTime} onMouseDownSongBarsHandle={props.onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={props.onMouseUpSongBarsHandle} songRangeProgressStill={props.songRangeProgressStill} />
+        <FsPlayer song={song} nextSong={props.nextSong} previousSong={props.previousSong} shuffle={props.shuffle} pause={props.pause} repeat={props.repeat} shuffled={props.shuffled} paused={props.paused} repeated={props.repeated} fullscreened={props.fullscreened} fullscreenChange={props.fullscreenChange} audioPlayerDuration={props.audioPlayerDuration} audioPlayerCurrentTime={props.audioPlayerCurrentTime} onMouseDownSongBarsHandle={props.onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={props.onMouseUpSongBarsHandle} songRangeProgressStill={props.songRangeProgressStill} audioPlayerVolume={props.audioPlayerVolume} muffled={props.muffled} onChangeSongVolumeHandle={props.onChangeSongVolumeHandle} onClickSongVolumeButtonHandle={props.onClickSongVolumeButtonHandle} />
       </div>
     </div>
   )

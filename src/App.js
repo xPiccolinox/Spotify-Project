@@ -25,6 +25,10 @@ function App() {
   const [audioPlayerCurrentTime, setAudioPlayerCurrentTime] = useState(0)
   const [songRangeProgressStill, setSongRangeProgressStill] = useState(false)
 
+  const [audioPlayerVolume, setAudioPlayerVolume] = useState(50)
+  const [lastAudioPlayerVolume, setLastAudioPlayerVolume] = useState(50)
+  const [muffled, setMuffled] = useState(false)
+
   let song = db.playlists[playlistId].songs[playlistSongIndex]
   let audio = `/songs/${song}.mp3`
   let audioPlayer = document.getElementById('audioPlayer')
@@ -102,6 +106,12 @@ function App() {
       document.getElementById('fullscreenBackground').style.pointerEvents = "none"
     }
   }
+  const onChangeSongVolumeHandle = (e) => {
+    setAudioPlayerVolume(e.target.value)
+  }
+  const onClickSongVolumeButtonHandle = () => {
+
+  }
 
   const onMouseDownSongBarsHandle = () => {
     setSongRangeProgressStill(true)
@@ -117,7 +127,7 @@ function App() {
         <audio id="audioPlayer">
           <source src={audio} />
         </audio>
-        <Fullscreen fullscreenChange={fullscreenChange} playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreened={fullscreened} audioPlayerDuration={audioPlayerDuration} audioPlayerCurrentTime={audioPlayerCurrentTime} onMouseDownSongBarsHandle={onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={onMouseUpSongBarsHandle} songRangeProgressStill={songRangeProgressStill} />
+        <Fullscreen fullscreenChange={fullscreenChange} playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreened={fullscreened} audioPlayerDuration={audioPlayerDuration} audioPlayerCurrentTime={audioPlayerCurrentTime} onMouseDownSongBarsHandle={onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={onMouseUpSongBarsHandle} songRangeProgressStill={songRangeProgressStill} audioPlayerVolume={audioPlayerVolume} muffled={muffled} onChangeSongVolumeHandle={onChangeSongVolumeHandle} onClickSongVolumeButtonHandle={onClickSongVolumeButtonHandle} />
         <Navbar />
         <div className="content">
           <Routes>
