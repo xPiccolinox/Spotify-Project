@@ -3,7 +3,13 @@ import { useState, useEffect } from 'react'
 import db from './../../../data/db.json'
 
 const FsSongButtons = (props) => {
-  const [volumeIconState, setVolumeIconState] = useState(2)
+  let volumeIconState = 3
+
+  if (props.audioPlayerVolume >= 66) volumeIconState = 3
+  else if (props.audioPlayerVolume >= 33) volumeIconState = 2
+  else if (props.audioPlayerVolume > 0) volumeIconState = 1
+  else if (props.audioPlayerVolume == 0) volumeIconState = 0
+
   const like = '/icons/player/icon_like_' + db.songs[props.song].liked + '.png'
   const songShuffle = `/icons/player/icon_shuffled_${props.shuffled}.png`
   const songPause = `/icons/player/icon_paused_${props.paused}.png`
@@ -27,7 +33,7 @@ const FsSongButtons = (props) => {
         <img id="fsSongRepeat" onClick={props.repeat} src={songRepeat}></img>
       </div>
       <div id="fsSongButtonsRight">
-       <img id="fsSongVolumeButton" src={volumeIcon} />
+       <img id="fsSongVolumeButton" src={volumeIcon} onClick={props.onClickSongVolumeButtonHandle}/>
         <div id="fsSongVolume">
           <input id="fsSongVolumeInput" type="range" min="0" max="100" onChange={props.onChangeSongVolumeHandle} />
           <div id="fsSongVolumeOverlay">

@@ -108,9 +108,11 @@ function App() {
   }
   const onChangeSongVolumeHandle = (e) => {
     setAudioPlayerVolume(e.target.value)
+    setLastAudioPlayerVolume(e.target.value)
   }
   const onClickSongVolumeButtonHandle = () => {
-
+    if (audioPlayerVolume === 0) setAudioPlayerVolume(lastAudioPlayerVolume)
+    else setAudioPlayerVolume(0)
   }
 
   const onMouseDownSongBarsHandle = () => {
