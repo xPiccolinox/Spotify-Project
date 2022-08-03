@@ -35,6 +35,7 @@ function App() {
 
   useEffect(() => {
     document.getElementById('audioPlayer').load()
+    document.getElementById('audioPlayer').volume = audioPlayerVolume / 300
   }, [playlistSongIndex, playlistId])
 
   useEffect(() => {
@@ -56,6 +57,11 @@ function App() {
       }
     }
   })
+
+  useEffect(() => {
+    document.getElementById('audioPlayer').volume = audioPlayerVolume / 300
+    console.log(document.getElementById('audioPlayer').volume)
+  }, [audioPlayerVolume])
 
   const changeSong = (id, index) => {
     setPlaylistId(id)

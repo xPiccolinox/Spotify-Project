@@ -101,9 +101,8 @@
   position: absolute;
   width: calc(100% + 16px);
   height: 16px;
-  filter: opacity(1);
+  filter: opacity(0);
   z-index: 1;
-  transform: translateY(40px);
 }
 #fsSongVolumeOverlay {
   background-color: #454545;

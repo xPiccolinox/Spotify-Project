@@ -15,13 +15,13 @@ const SongButtonsRight = (props) => {
     thumbPosition = document.getElementById('songVolumeProgress').value / document.getElementById('songVolumeProgress').max * 100
     document.getElementById('songVolumeThumb').style.marginLeft = 'calc(' + thumbPosition + '% - ' + thumbPosition * 10 / 100 + 'px)'
     audioPlayer = document.getElementById('audioPlayer')
-    audioPlayer.volume = thumbPosition / 300
+    // audioPlayer.volume = thumbPosition / 300
   })
 
   const volumeChange = () => {
     thumbPosition = document.getElementById('songVolumeProgress').value / document.getElementById('songVolumeProgress').max * 100
     document.getElementById('songVolumeThumb').style.marginLeft = 'calc(' + thumbPosition + '% - ' + thumbPosition * 10 / 100 + 'px)'
-    audioPlayer.volume = thumbPosition / 300
+    // audioPlayer.volume = thumbPosition / 300
     if (thumbPosition > 66) setVolume(3)
     else if (thumbPosition > 33) setVolume(2)
     else if (thumbPosition > 0) setVolume(1)
