@@ -13,7 +13,7 @@ const Player = (props) => {
       <SongInfo song={song} />
       <SongButtons  shuffle={props.shuffle} previousSong={props.previousSong} pause={props.pause} nextSong={props.nextSong} repeat={props.repeat} props={[props.shuffled, props.paused, props.repeated]} />
       <SongBar song={song} playlistSongIndex={props.playlistSongIndex} playlistId={props.playlistId} audioPlayerDuration={props.audioPlayerDuration} audioPlayerCurrentTime={props.audioPlayerCurrentTime} onMouseDownSongBarsHandle={props.onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={props.onMouseUpSongBarsHandle} songRangeProgressStill={props.songRangeProgressStill} />
-      <SongButtonsRight fullscreenChange={props.fullscreenChange} fullscreened={props.fullscreened} />
+      <SongButtonsRight fullscreenChange={props.fullscreenChange} fullscreened={props.fullscreened} audioPlayerVolume={props.audioPlayerVolume} muffled={props.muffled} onChangeSongVolumeHandle={props.onChangeSongVolumeHandle} onClickSongVolumeButtonHandle={props.onClickSongVolumeButtonHandle} />
     </div>
   )
 }

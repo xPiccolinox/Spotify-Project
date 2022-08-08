@@ -60,7 +60,6 @@ function App() {
 
   useEffect(() => {
     document.getElementById('audioPlayer').volume = audioPlayerVolume / 300
-    console.log(document.getElementById('audioPlayer').volume)
   }, [audioPlayerVolume])
 
   const changeSong = (id, index) => {
@@ -148,7 +147,7 @@ function App() {
           <Topbar />
         </div>
         <Friends />
-        <Player playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreened={fullscreened} fullscreenChange={fullscreenChange} audioPlayerDuration={audioPlayerDuration} audioPlayerCurrentTime={audioPlayerCurrentTime} onMouseDownSongBarsHandle={onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={onMouseUpSongBarsHandle} songRangeProgressStill={songRangeProgressStill} />
+        <Player playlistId={playlistId} playlistSongIndex={playlistSongIndex} nextSong={nextSong} previousSong={previousSong} shuffle={shuffle} pause={pause} repeat={repeat} shuffled={shuffled} paused={paused} repeated={repeated} fullscreened={fullscreened} fullscreenChange={fullscreenChange} audioPlayerDuration={audioPlayerDuration} audioPlayerCurrentTime={audioPlayerCurrentTime} onMouseDownSongBarsHandle={onMouseDownSongBarsHandle} onMouseUpSongBarsHandle={onMouseUpSongBarsHandle} songRangeProgressStill={songRangeProgressStill} audioPlayerVolume={audioPlayerVolume} muffled={muffled} onChangeSongVolumeHandle={onChangeSongVolumeHandle} onClickSongVolumeButtonHandle={onClickSongVolumeButtonHandle} />
       </div>
     </BrowserRouter>
   );

@@ -62,7 +62,6 @@
 }
 /* Right side buttons */
 #fsSongButtons #fsSongButtonsRight {
-  background-color: green;
   display: flex;
   align-items: center;
   position: absolute;
@@ -88,7 +87,6 @@
 }
 /* Song Volume Bar */
 #fsSongVolume {
-  background-color: purple;
   position: absolute;
   right: 56px;
   display: flex;

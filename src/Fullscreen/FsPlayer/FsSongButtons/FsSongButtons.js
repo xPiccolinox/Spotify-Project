@@ -1,5 +1,5 @@
 import './FsSongButtons.css'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import db from './../../../data/db.json'
 
 const FsSongButtons = (props) => {
